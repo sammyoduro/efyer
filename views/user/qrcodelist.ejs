@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free mobile app HTML landing page template to help you build a great online presence for your app which will convert visitors into users">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+    
+    <title>Efyer Team - Event ticket verification app website</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/fontawesome-all.css" rel="stylesheet">
+    <link href="/stylesheets/swiper.css" rel="stylesheet">
+	<link href="/stylesheets/magnific-popup.css" rel="stylesheet">
+	<link href="/stylesheets/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="/images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">DELETE EVENT </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                        </div>
+                <div class="modal-body">
+                  <p>You are about to delete <b><i><%=eventname.eventname%></i></b> event record, this procedure is irreversible.All associate tickets will also be deleted</p>
+                  <p>Do you want to proceed?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  <a  class="btn btn-danger btn-ok" href="/dashboard/delete/?id=<%=eventname.id%>&&q=<%=eventname.alias%>">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <a class="navbar-brand logo-image" href="/"><img src="/images/logo.svg" alt="efyer logo"></a>    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="/">HOME </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="/#features">FEATURES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="/#preview">PREVIEW</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/#pricing">PRICING</a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="/#contact">CONTACT</a>
+            </li>
+            <%if(user){%>
+                <li class="nav-item dropdown">
+                    <a  class="nav-link dropdown-toggle page-scroll" href="/" id="userDropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user"></i> &nbsp;<%=user.firstname.toUpperCase()%></a>
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        <a class="dropdown-item active" href="/dashboard"><span class="item-text">DASHBOARD</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="/dashboard/settings"><span class="item-text">SETTINGS</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="/logout"><span class="item-text">LOGOUT</span></a>
+                    </div>
+                </li>
+                <%}else{%>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/join">JOIN</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="/login">SIGN IN</a>
+                  </li>
+                <%}%>
+        </ul>
+    </div>
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+
+
+<div id="features" class="tabs">
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-12 rsp">
+                        <div class="dropdown show float-left"  id="grd">
+                                <a class="btn btn-secondary "  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v"></i>
+                                </a>
+                              
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <%if(eventname){%>
+                                        <a class="dropdown-item" href="javascript:void(0)"><%=eventname.eventname%></a>
+                                        <b class="dropdown-item">Event ID <%=eventname.eventid%></b>
+                                        <a  class="dropdown-item" href="/dashboard" ><i class="fas fa-plus-square"></i> Create Event
+                                        </a>
+                                        <a  class="dropdown-item" href="/dashboard">Event List</a>
+                                        <a  class="dropdown-item" href="/dashboard/e/?id=<%= eventname.id%>&&q=<%= eventname.alias%>"> Generate app token</a>
+                                        <a  class="dropdown-item" href="/dashboard/q/?id=<%= eventname.id%>&&q=<%= eventname.alias%>"> Generate Ticket QRCodes</a>
+                                        <a class="dropdown-item active"  href="javascript:void(0)">QRCode ticket list <span class="badge badge-primary px-2 rounded-pill ml-2"><%= num_qrcodeticket %></span> </a>
+                                        <a  class="dropdown-item" href="/dashboard/p/?id=<%= eventname.id%>&&q=<%= eventname.alias%>"> Generate Ticket Pin</a>
+                                        <a  class="dropdown-item" href="/dashboard/ptickets/?id=<%=eventname.id%>&&q=<%=eventname.alias%>">Pin ticket list <span class="badge badge-primary px-2 rounded-pill ml-2"><%= num_pinticket %> </span></a>
+                                        <button class="dropdown-item btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-delete"><i class="fas fa-trash"> Delete event</i></button>
+                                        
+                                        <%}%>
+                                 </div>
+                              </div>
+                              <a href="/live/?i=<%=eventname._id%>" class="btn btn-primary btn-sm" style="margin:3px" target="_blank">Event Live</a>
+                </div>
+            <div class="col-lg-3">
+                <nav class="nav flex-column  ">
+                    
+            <%if(eventname){%>
+                    <a href="/dashboard/e/?id=<%=eventname.id%>&&q=<%=eventname.alias%>" class="nav-link px-4"><%=eventname.eventname%></a>
+                    <b class="nav-link px-4" >Event ID <%=eventname.eventid%></b>
+                    <a href="/dashboard" class="nav-link px-4 ">+ Create Event</a>
+                    <a href="/dashboard" class="nav-link px-4 ">Event List</a>
+                    <a href="/dashboard/e/?id=<%= eventname.id%>&&q=<%= eventname.alias%>" class="nav-link px-4">Generate app token</a></li>
+                    <a href="/dashboard/q/?id=<%= eventname.id%>&&q=<%= eventname.alias%>" class="nav-link px-4"> Generate Ticket QRCodes</a>
+                    <a href=" javascript:void(0)" class="nav-link px-4  active" >QRCode ticket list <span class="badge badge-primary px-2 rounded-pill ml-2"> <%= num_qrcodeticket %> </span></a>
+                    <a href="/dashboard/p/?id=<%= eventname.id%>&&q=<%= eventname.alias%>" class="nav-link px-4"> Generate Ticket Pin</a></li>
+                    <a href="/dashboard/ptickets/?id=<%=eventname.id%>&&q=<%=eventname.alias%>" class="nav-link px-4">Pin ticket list  <span class="badge badge-primary px-2 rounded-pill ml-2"><%= num_pinticket %> </span></a>
+                    
+                <%}%>
+                <a href="/live/?i=<%=eventname._id%>" class="btn btn-primary btn-sm" style="margin:3px" target="_blank">Event Live</a>
+                <br><button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirm-delete"><i class="fas fa-trash"> Delete event</i></button>
+            </nav>
+            </div>
+            <div class="col-lg-9">
+                        <%-messages('msgsuccess',locals) %>
+                        <h2>Generated QRCodes</h2>
+                <div class="p-heading p-large">
+                    Download generated QRCodes and emboss it on your printed tickets.This helps in ticket verification at events using the Efyer app. <br>
+                    <%if(QRlist.length > 0){%>
+                    <button class="btn btn-primary" onclick="zipcrcode(this.id)" id=<%=eventname._id%> ><i class="fa fa-cloud-download-alt"></i> Download qrcode</button>
+                    <%}%>
+                </div>
+                <%if(QRlist.length > 0){%>
+                <% var date = new Date(get_qrcodeticket[0].createdAt) %>
+                <i class="text-danger">tickets will be deleted after expiration date: <%=date.toDateString() %></i>
+                <%}%>                      
+                    <div class="col-lg-12">
+                            <div id="zipqrcode">
+                                    <%if(QRlist.length > 0){%>
+                                        <% QRlist.forEach((element,i) => { %>
+                                        <img src="<%=element%>" alt="generated qrcodes" width="100" style="margin:1px">
+                                        <% })} else{%>
+                                            <h2 class="text-default">No Generated QRCodes</h2>
+                                         <%}%>
+                            </div>
+                    </div>
+                    <%if(QRlist.length > 0){%>
+                    <div class="col-lg-12" style="margin-top:20px;">
+                            <nav aria-label="Page navigation" >
+        <ul class="pagination justify-content-center">
+              <% if (current == 1) { %>
+                  <li class="page-item disabled"><a class="page-link">First</a></li>
+              <% } else { %>
+                  <li class="page-item"><a class="page-link" href="/dashboard/qticket/?id=<%= eventname.id%>&&q=<%= eventname.alias%>&&page=1">First</a></li>
+              <% } %>
+              <% var i = (Number(current) > 3 ? Number(current) - 2 : 1) %>
+              <% if (i !== 1) { %>
+                  <li class="page-item disabled"><a class="page-link" >...</a></li>
+              <% } %>
+              <% for (; i <= (Number(current) + 2) && i <= pages; i++) { %>
+                  <% if (i == current) { %>
+                      <li class="page-item active"><a class="page-link" ><%= i %></a></li>
+                  <% } else { %>
+                      <li class="page-item"><a class="page-link"  href="/dashboard/qticket/?id=<%= eventname.id%>&&q=<%= eventname.alias%>&&page=<%= i %>"><%= i %></a></li>
+                  <% } %>
+                  <% if (i == Number(current) + 2 && i < pages) { %>
+                      <li class="page-item disabled"><a class="page-link" >...</a></li>
+                  <% } %>
+              <% } %>
+              <% if (current == pages) { %>
+                  <li class="page-item disabled"><a class="page-link">Last</a></li>
+              <% } else { %>
+                  <li class="page-item"><a class="page-link" href="/dashboard/qticket/?id=<%= eventname.id%>&&q=<%= eventname.alias%>&&page=<%= pages %>">Last</a></li>
+              <% } %>
+          </ul>
+      </nav>
+                    </div>
+                    <%}%>
+                </div> 
+            <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container --> 
+</div>
+
+<!-- Footer -->
+     <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-col">
+                            <h4>About Efyer</h4>
+                            <p>Efyer is an event ticket verification app which helps event organisers and check event attendees tickets if valid or not valid.</p>
+                        </div>
+                    </div> <!-- end of col -->
+                    <div class="col-md-4">
+                        <div class="footer-col middle">
+                           
+                        </div>
+                    </div> <!-- end of col -->
+                    <div class="col-md-4">
+                        <div class="footer-col last">
+                            <h4>Social Media</h4>
+                            <span class="fa-stack">
+                                <a href="#your-link">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                </a>
+                            </span>
+                            <span class="fa-stack">
+                                <a href="#your-link">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-instagram fa-stack-1x"></i>
+                                </a>
+                            </span>
+                        </div> 
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of footer -->  
+        <!-- end of footer -->
+    
+    
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p class="p-small">Copyright © Efyer Team - Event ticket verification app by <a href="https://boticstechnologies.com">Botics Technologies</a></p>
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+      
+    	
+    
+    <script src="/javascripts/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="/javascripts/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="/javascripts/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/javascripts/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="/javascripts/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/javascripts/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="/javascripts/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="/javascripts/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="/javascripts/jszip.min.js"></script>
+    <script src="/javascripts/FileSaver.min.js"></script>
+    <script src="/javascripts/scripts.js"></script>
+    <script>
+
+        function copytoken(e) {copyclipboard(e);alert("data copied")}
+function copyclipboard(text) {var copytxt = document.createElement("textarea");document.body.appendChild(copytxt);copytxt.value = text;copytxt.select();document.execCommand('copy');document.body.removeChild(copytxt);}
+
+$('body').on('click','#generateqrcode',function () {
+    
+    $('#generator').modal();
+    $('#generator-tag').html('');
+$('.tag').html('');
+    var input = $('#qrlimit').val();
+    var data = {limit:input,url:window.location.href}    
+    $.ajax({
+      type        : 'get',
+      data        : data,
+      dataType    : 'json',
+      url         : '/dashboard/genqrcodes',
+      success     : function(data){ 
+          $('#generatorTitle').html('Generating qrCodes please wait...')         
+        if(data.status) {
+            
+            var txt='';
+            data.qrcode.QRlist.forEach(element => {
+                txt+='<img src="'+element+'" alt="generated qrcode" width="100" style="margin:1px">';
+            });
+            
+            $('#generatorTitle').html(' GENERATED TICKETS ( '+data.qrcode.QRlist.length +' ) <br> charge GHS '+data.qrcode.c)
+            txt+='<div class="modal-footer" style="margin-top:30px"><a class="btn-solid-reg" data-dismiss="modal" style="cursor: pointer;">CLOSE</a><a class="btn-solid-reg" href="/paymentAuth/confirmpayment">SAVE</a></div>';
+            $('#generator-tag').html(txt);
+            $('.lds-roller').addClass('cup');
+            $('.err_l').text('');
+        }else{
+            $('.lds-roller').removeClass('cup');
+            window.setTimeout(()=>{$('#generator-tag').html(''); $('#generator').modal('hide')},1000)
+            $('.err_l').text(data.errmsg)
+        }
+        
+      }
+      })
+    
+})
+function zipcrcode(e) {
+    ajaxindicatorstart('loading... please wait..');
+    $.ajax({
+        type        : 'get',
+        data        : {t:e},
+        dataType    : 'json',
+        url         : '/dashboard/exportqrcode',
+        success     : function(callback){
+            if(callback.status){
+
+var zip = new JSZip();
+    var imagesFolder = zip.folder("qrcodes");
+    callback.qrcodes.map((img, i) => {
+        imagesFolder.file(i+1 + '.png', img.split(',')[1], {base64: true});
+    })
+    zip.generateAsync({type:"blob"})
+    .then(function(content) {
+    // see FileSaver.js
+    saveAs(content, "qrcodetickets.zip");
+    ajaxindicatorstop();
+});
+            }
+            
+            
+        }
+    })
+}
+function ajaxindicatorstart(text){
+if(jQuery('body').find('#resultLoading').attr('id') != 'resultLoading'){
+    jQuery('body').append('<div id="resultLoading" style="display:none"><div><img src="/images/ajax-loader.gif"><div>'+text+'</div></div><div class="bg"></div></div>');
+}
+jQuery('#resultLoading').css({
+'width':'100%',
+'height':'100%',
+'position':'fixed',
+'z-index':'10000000',
+'top':'0',
+'left':'0',
+'right':'0',
+'bottom':'0',
+'margin':'auto'
+});
+
+jQuery('#resultLoading .bg').css({
+'background':'#000000',
+'opacity':'0.7',
+'width':'100%',
+'height':'100%',
+'position':'absolute',
+'top':'0'
+});
+
+jQuery('#resultLoading>div:first').css({
+'width': '250px',
+'height':'75px',
+'text-align': 'center',
+'position': 'fixed',
+'top':'0',
+'left':'0',
+'right':'0',
+'bottom':'0',
+'margin':'auto',
+'font-size':'16px',
+'z-index':'10',
+'color':'#ffffff'
+});
+
+jQuery('#resultLoading .bg').height('100%');
+jQuery('#resultLoading').fadeIn(300);
+jQuery('body').css('cursor', 'wait');
+}
+function ajaxindicatorstop()
+{
+jQuery('#resultLoading .bg').height('100%');
+jQuery('#resultLoading').fadeOut(300);
+jQuery('body').css('cursor', 'default');
+}
+</script>
+    </body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Free mobile app HTML landing page template to help you build a great online presence for your app which will convert visitors into users">
+    <meta name="author" content="Inovatik">
+    <meta name="csrf-token" content=J200I35c-TDLVeE4hOvs3lNowo1YxvMg4uEU>
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <title>Efyer Team - Event ticket verification app website</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/fontawesome-all.css" rel="stylesheet">
+    <link href="stylesheets/swiper.css" rel="stylesheet">
+	<link href="stylesheets/magnific-popup.css" rel="stylesheet">
+	<link href="stylesheets/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <a class="<a class="navbar-brand logo-image" href="/"><img src="images/logo.svg" alt="efyer logo"></a>-brand logo-image" href="/"><img src="images/logo.svg" alt="efyer logo"></a>    
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#features">FEATURES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#preview">PREVIEW</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                </li>
+                <%if(user){%>
+                    <li class="nav-item dropdown">
+                        <a  class="nav-link dropdown-toggle page-scroll" href="/" id="userDropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user"></i> &nbsp;<%=user.firstname.toUpperCase()%></a>
+                        <div class="dropdown-menu" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="/dashboard"><span class="item-text">DASHBOARD</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="/dashboard/settings"><span class="item-text">SETTINGS</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
+                            <a class="dropdown-item" href="/logout"><span class="item-text">LOGOUT</span></a>
+                        </div>
+                    </li>
+                    <%}else{%>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/join">JOIN</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link " href="/login">SIGN IN</a>
+                      </li>
+                    <%}%>
+                    
+            </ul>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="text-container">
+                            <h2>#1 APP FOR <br><span id="js-rotating">CORPORATE EVENT,OUTDOOR EVENT, INDOOR EVENT</span></h2>
+                            <p class="p-large">Its no more a hustle for event organizers to verify thier event attendees tickets on the day of event. The Efyer app simply scans the attendees tickets to check whether valid or not.
+                                You can broadcast tickets via sms on this website which can be verified with the EFYER app. JOIN NOW!
+                            </p>
+                            <a class="btn-solid-lg page-scroll" href="#your-link"><i class="fab fa-apple"></i>APP STORE</a>
+                            <a class="btn-solid-lg page-scroll" href="#your-link"><i class="fab fa-google-play"></i>PLAY STORE</a>
+                        </div>
+                    </div> <!-- end of col -->
+                    <div class="col-lg-6">
+                        <div class="image-container">
+                            <img class="img-fluid" src="images/header-iphone.png" alt="alternative">
+                        </div> <!-- end of image-container -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+
+    <!-- Features -->
+    <div id="features" class="tabs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>FEATURES</h2>
+                    <div class="p-heading p-large">Efyer makes event ticket verification very easy. Whether sms or QRCode embossed tickets.</div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="lenoTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-envelope"></i>SMS TICKET</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-qrcode"></i> QRCode TICKET</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-ticket-alt"></i>LIVE EVENT</a>
+                    </li>
+                </ul>
+                <!-- end of tabs links -->
+
+
+                <!-- Tabs Content-->
+                <div class="tab-content" id="lenoTabsContent">
+                    
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <div class="container">
+                            <div class="row">
+                                
+                                <!-- Icon Cards Pane -->
+                                <div class="col-lg-4">
+                                    <div class="card left-pane first">
+                                        <div class="card-body">
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">SMS Ticket</h4>
+                                                <p>Send tickets to customers via sms which could be validated by scanning the phone with the ticket message using the efyer app</p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <i class="far fa-envelope-open"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card left-pane">
+                                        <div class="card-body">
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">Generate ticket pin</h4>
+                                                <p>Ticket pins can be generated and exported. You can use our efyer platform to send tickets to customers </p>
+                                            </div>
+                                            <div class="card-icon">
+                                                <i class="far fa fa-bars"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of icon cards pane -->
+
+                                <!-- Image Pane -->
+                                <div class="col-lg-4">
+                                    <img class="img-fluid" src="images/features-iphone-1.png" alt="alternative">
+                                </div>
+                                <!-- end of image pane -->
+                                
+                                <!-- Icon Cards Pane -->
+                                <div class="col-lg-4">
+                                    <div class="card right-pane first">
+                                        <div class="card-body">
+                                            <div class="card-icon">
+                                                <i class="far fa-file-excel"></i>
+                                            </div>
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">Excel contact import</h4>
+                                                <p>Send event tickets to your contact list by importing contact numbers from excel file. Note: first column of the excel file should contain your contact numbers.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card right-pane">
+                                        <div class="card-body">
+                                            <div class="card-icon">
+                                                <i class="far fa-bookmark"></i>
+                                            </div>
+                                            <div class="text-wrapper">
+                                                <h4 class="card-title">Easy Usage</h4>
+                                                <p>Efyer app is very easy to operate</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of icon cards pane -->
+
+                            </div> <!-- end of row -->
+                        </div> <!-- end of container -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- Image Pane -->
+                                <div class="col-md-4">
+                                    <img class="img-fluid" src="images/features-iphone-2.png" alt="alternative">
+                                </div>
+                                <!-- end of image pane -->
+                                
+                                <!-- Text And Icon Cards Area -->
+                                <div class="col-md-8">
+                                    <div class="text-area">
+                                        <h3>Validate QRCode tickets</h3>
+                                        <p>After generating QRCode from this platform, export the QRCode list to be embossed on printed tickets.</p>
+                                    </div> <!-- end of text-area -->
+                                    
+                                    <div class="icon-cards-area">
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="fas fa-cube"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">QRCode Ticket</h4>
+                                                    <p>Emboss generated qrcode on printed event tickets</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="fas fa-ticket-alt"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Validate tickets</h4>
+                                                    <p>Use Efyer app to scan and verify event ticket</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="far fa-calendar-check"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Export QRCode</h4>
+                                                    <p>Its easy to export qrcode list to a local folder on your desktop. Simply click to export to a folder on your desktop.</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-icon">
+                                                    <i class="far fa-file-code"></i>
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Ticket lifespan</h4>
+                                                    <p>Ticket expires right after usage</p>
+                                                </div>
+                                            </div>
+                                    </div> <!-- end of icon cards area -->
+                                </div> <!-- end of col-md-8 -->
+                                <!-- end of text and icon cards area -->
+
+                            </div> <!-- end of row -->
+                        </div> <!-- end of container -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- Text And Icon Cards Area -->
+                                <div class="col-md-8">
+                                    <div class="text-area">
+                                            <h3>Realtime Event monitoring</h3>
+                                            <p>With our realtime evnet monitoring system, it gives users the ability to Monitor number of event ticket verified and the timestamp at which each ticket was verified.</p>
+                                        </div> <!-- end of text-area -->
+                                    <div class="icon-cards-area">
+                                        <div class="card">
+                                            <div class="card-icon">
+                                                <i class="far fa-file-excel"></i>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">Export report</h4>
+                                                <p>Event report can easily be exported in csv format to your desktop for any data analysis</p>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-icon">
+                                                <i class="fas fa-clock"></i>
+                                            </div>
+                                            <div class="card-body">
+                                                <h4 class="card-title">View live ticket verification</h4>
+                                                <p>Ticket are live monitored when verified by Efyer app. Authenticated users are allowed to see live ticket verification. Timestamp of verifation is attacthed to each ticket when verified.</p>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end of icon cards area -->
+                                    
+                                    
+                                </div> <!-- end of col-md-8 -->
+                                <!-- end of text and icon cards area -->
+
+                                <!-- Image Pane -->
+                                <div class="col-md-4">
+                                    <img class="img-fluid" src="images/features-iphone-3.png" alt="alternative">
+                                </div>
+                                <!-- end of image pane -->
+                                    
+                            </div> <!-- end of row -->
+                        </div> <!-- end of container -->
+                    </div><!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                </div> <!-- end of tab-content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of row --> 
+        </div> <!-- end of container --> 
+    </div> <!-- end of tabs -->
+    <!-- end of features -->
+
+
+    <!-- Video -->
+    <div id="preview" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>EFYER PREVIEW</h2>
+                    <div class="p-heading p-large">This snippet video demonstrate how to use the efyer app</div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Video Preview -->
+                    <div class="image-container">
+                        <div class="video-wrapper">
+                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs" data-effect="fadeIn">
+                                <img class="img-fluid" src="images/video-frame.jpg" alt="alternative">
+                                <span class="video-play-button">
+                                    <span></span>
+                                </span>
+                            </a>
+                        </div> <!-- end of video-wrapper -->
+                    </div> <!-- end of image-container -->
+                    <!-- end of video preview -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of video -->
+
+
+   <div id="pricing" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center">TICKET PRICING</h2>
+                    <div class="p-heading p-large">
+                            Ticket pricing is based on the number of ticket generated.
+                            You can generate ticket as many as 10,000 per click. <br>
+                            </div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-lg-7 offset-lg-3">
+<!-- TABLE -->
+                    <table class="table table-striped table-dark table-hover text-center">
+                        <thead id="priceh">
+                            <tr>
+                                <th>NUMBER OF TICKETS</th>
+                                <th>PRICE PER TICKET ( GHS )</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 - 499</td>
+                                <td>0.70</td>
+                            </tr>
+                            <tr>
+                                    <td>500 - 999</td>
+                                    <td>0.50</td>
+                            </tr>
+                            <tr>
+                                    <td>1000 - 4999</td>
+                                    <td>0.40</td>
+                            </tr>
+                            <tr>
+                                    <td>5000 - 10000</td>
+                                    <td>0.30</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+<!-- /TABLE -->
+
+<p>Contact the support team if you want to generate more than 20,000 tickets 
+        for a good discount. <br> Call <i class="fas fa-phone"></i> <a class="turquoise" href="tel:+233205455945">+233 205 455 945</a> or mail us at
+        <i class="fas fa-envelope"></i> <a class="turquoise" href="mailto:support@efyer.com">support@efyer.com</a> or send direct message <a class="page-scroll turquoise" href="#contact">here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="text-container">
+                        <h2>Download <span class="blue">EFYER APP</span></h2>
+                        <p class="p-large">Manage your event the right way,choose EFYER app!</p>
+                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>APP STORE</a>
+                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-google-play"></i>PLAY STORE</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/download.png" alt="alternative">
+                    </div> <!-- end of img-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of download -->
+
+
+    <!-- Statistics -->
+    <div class="counter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Counter -->
+                    <div id="counter">
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="231">1</div>
+                            <p class="counter-info">Upcoming Events</p>
+                        </div>
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="2">1</div>
+                            <p class="counter-info">Hosted Events</p>
+                        </div>
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="1">1</div>
+                            <p class="counter-info">Users</p>
+                        </div>
+                    </div>
+                    <!-- end of counter -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of counter -->
+    <!-- end of statistics -->
+
+
+    <!-- Contact -->
+    <div id="contact" class="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>CONTACT</h2>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="address">Don't hesitate to give us a call or just use the contact form below</li>
+                        <li><i class="fas fa-map-marker-alt"></i>2 nd Floor PIWC, ASOKWA-KUMASI</li>
+                        <li><i class="fas fa-phone"></i><a class="blue" href="tel:+233205455945">+233 205 455 945</a></li>
+                        <li><i class="fas fa-envelope"></i><a class="blue" href="mailto:info@efyer.com">info@efyer.com</a></li>
+                    </ul>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    
+                    <!-- Contact Form -->
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form -->
+    <!-- end of contact -->
+
+   <!-- Footer -->
+   <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-col">
+                        <h4>About Efyer</h4>
+                        <p>Efyer is an event ticket verification app which helps event organisers and check event attendees tickets if valid or not valid.</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col middle">
+                       
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-4">
+                    <div class="footer-col last">
+                        <h4>Social Media</h4>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> 
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © Efyer Team - Event ticket verification app by <a href="https://boticstechnologies.com">Botics Technologies</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    <!-- Scripts -->
+    <script src="javascripts/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="javascripts/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="javascripts/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="javascripts/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="javascripts/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="javascripts/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="javascripts/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="javascripts/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="javascripts/scripts.js"></script> <!-- Custom scripts -->
+    <script src="javascripts/main.js"></script>
+</body>
+</html>
