@@ -157,6 +157,7 @@ data        : input,
 dataType    : 'json',
 url         : '/dashboard/process/genticketpins',
 success     : function(data){
+    console.log(data);
 if(data.status){
 window.location.href = data.url
 }
