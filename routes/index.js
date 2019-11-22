@@ -132,7 +132,7 @@ router.post('/join', function(req, res) {
             from: '"Botics Technologies" <project@boticstechnologies.com>',
             to: req.body.email,
             subject: 'User Account verification Token',
-            text: 'Hello '+ req.body.fname +', \n\n'+'Please verify your account by clicking the link: \nhttp:\/\/'+'localhost:3000\/userAuth\/confirmation\/Token\/?id='+token.token
+            text: 'Hello '+ req.body.fname +', \n\n'+'Please verify your account by clicking the link: \nhttps:\/\/'+'efyer.herokuapp.com\/userAuth\/confirmation\/Token\/?id='+token.token
             };
             transporter.sendMail(mailOptions, function(error, info){
               if (error) throw error;

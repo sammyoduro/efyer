@@ -40,7 +40,7 @@ router.post('/',async (req,res)=>{
                 from: '"Botics Technologies" <project@boticstechnologies.com>',
                 to: req.body.rsm,
                 subject: 'Password reset',
-                text: 'Hello '+ users.firstname +', \n\n'+'Please reset your account password by clicking the link: \nhttp:\/\/'+'localhost:3000\/rst\/?id='+token.token
+                text: 'Hello '+ users.firstname +', \n\n'+'Please reset your account password by clicking the link: \nhttps:\/\/'+'efyer.herokuapp.com\/rst\/?id='+token.token
                 };
                 transporter.sendMail(mailOptions, function(error, info){
                   if (error) throw error;

@@ -24,7 +24,7 @@ router.get('/',async function(req, res, next) {
     data.app_id     = '2452016064';
     data.app_key    = 'test';
     var URL         = 'https://test.interpayafrica.com/interapi/ProcessPayment';
-    data.return_url  = 'http://localhost:3000/paymentAuth/confirmpayment/feedback';
+    data.return_url  = 'https://efyer.herokuapp.com/paymentAuth/confirmpayment/feedback';
     
     // data.app_id    = '7453014192';
     // data.app_key    ='76716648';

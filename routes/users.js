@@ -615,7 +615,7 @@ router.post('/process/genticketpins',isLoggedIn,async function (req,res) {
   data.app_id     = '2452016064';
   data.app_key    = 'test';
   var URL         = 'https://test.interpayafrica.com/interapi/ProcessPayment';
-  data.return_url  = 'http://localhost:3000/dashboard/payment/genticketpins';
+  data.return_url  = 'https://efyer.herokuapp.com/dashboard/payment/genticketpins';
   data.name       = req.user.brandname;
   data.email      = req.user.email;
   data.currency   = 'GHS';
