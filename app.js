@@ -23,7 +23,8 @@ var emailreset            = require('./routes/emailreset');
 var adminlogin            = require('./routes/admin/login');
 var adminhome            = require('./routes/admin/home');
 
-mongoose.connect('mongodb://localhost:27017/efyerdb', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost:27017/efyerdb', { useNewUrlParser: true });
+mongoose.connect('mongodb://sammyoduro:pass123pass@ds063833.mlab.com:63833/heroku_p660320s', { useNewUrlParser: true });
 var db = mongoose.connection;
 require('./config/passport');
 
